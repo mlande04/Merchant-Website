@@ -1,0 +1,234 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CS 213 Week 07 Ponder and Prove | Blade Shop Home</title>
+	<script type="text/javascript" src="/JSweek07.js"></script>
+	<link rel="stylesheet" type="text/css" href="/CSSweek07.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+
+<body>
+	<div id="content">
+	<!-- Side navigation -->
+	<div class="sidenav">
+		<a href="#">Home</a>
+		<a href="#">Shop</a>
+		<a href="#">Cart</a>
+	</div>
+	
+	<header>
+		<h1>The Blade Shop</h1>
+		<p>Check out our selection of high quality blades! We have many fine reproductions available.</p>
+	</header>
+	
+	<div class="main">
+    <!-- Inventory -->
+	<h2>Broadsword</h2>
+    <p>Victorian broadsword reproduction: a double-edged basket-hilted sword</p>
+	<p id="price">$1000.00</p>
+    <form action="" id="item1" oninput="addVol()" onreset="resetForm()">
+ 	  <div>
+            <input size="3"/>
+			<button onclick="addCart()">Add to Cart</button>
+       </div>
+    </form>
+	
+	<h2>Rapier</h2>
+    <p>Renaissance reproduction: a slender, sharply pointed sword</p>
+	<p id="price">$1500.00</p>
+    <form action="" id="item2" oninput="addVol()" onreset="resetForm()">
+ 	  <div>
+            <input size="3"/>
+			<button onclick="addCart()">Add to Cart</button>
+       </div>
+    </form>
+	
+	<h2>Claymore</h2>
+    <p>Early Scottish reproduction: two handed sword, early version of a greatsword</p>
+	<p id="price">$1950.00</p>
+    <form action="" id="item3" oninput="addVol()" onreset="resetForm()">
+ 	  <div>
+            <input size="3"/>
+			<button onclick="addCart()">Add to Cart</button>
+       </div>
+    </form>
+	
+	<h2>Katana</h2>
+    <p>Japanese reproduction: traditionally used by samurai; a two handed, curved, slender, single-edged sword</p>
+	<p id="price">$1200.00</p>
+    <form action="" id="item4" oninput="addVol()" onreset="resetForm()">
+ 	  <div>
+            <input size="3"/>
+			<button onclick="addCart()">Add to Cart</button>
+       </div>
+    </form>
+    
+	<h2>Sabre</h2>
+    <p>A single-edged curved bladed cavalry sword</p>
+	<p id="price">$700.00</p>
+    <form action="" id="item5" oninput="addVol()" onreset="resetForm()">
+ 	  <div>
+            <input size="3"/>
+			<button onclick="addCart()">Add to Cart</button>
+       </div>
+    </form>
+	
+	<h2>Long Sword</h2>
+    <p>Medieval reproduction: a two handed, straight, double-edged sword</p>
+	<p id="price">$550.00</p>
+    <form action="" id="item6" oninput="addVol()" onreset="resetForm()">
+ 	  <div>
+            <input size="3"/>
+			<button onclick="addCart()">Add to Cart</button>
+       </div>
+    </form>
+	
+	<h2>Dirk</h2>
+    <p>Scottish reproduction: a long thrusting dagger</p>
+	<p id="price">$250.00</p>
+    <form action="" id="item7" oninput="addVol()" onreset="resetForm()">
+ 	  <div>
+            <input size="3"/>
+			<button onclick="addCart()">Add to Cart</button>
+       </div>
+    </form>
+	
+	<h2>Stiletto</h2>
+    <p>15th Century Italian reproduction: a long,slender blade with a needle-like point primarily used for stabbing</p>
+	<p id="price">$375.00</p>
+    <form action="" id="item8" oninput="addVol()" onreset="resetForm()">
+ 	  <div>
+            <input size="3"/>
+			<button onclick="addCart()">Add to Cart</button>
+       </div>
+    </form>
+	
+	<h2>Hunting Dagger</h2>
+    <p>18th Century German reproduction: a long double-edged stabbing knife, traditionally used to kill deer and boar</p>
+	<p id="price">$150.00</p>
+    <form action="" id="item9" oninput="addVol()" onreset="resetForm()">
+ 	  <div>
+            <input size="3"/>
+			<button onclick="addCart()">Add to Cart</button>
+       </div>
+    </form>
+	
+	<h2>Arkansas Toothpick</h2>
+    <p>19th Century American reproduction: a heavy dagger with a 12-20 inch pointed, straight blade</p>
+	<p id="price">$150.00</p>
+    <form action="" id="item10" oninput="addVol()" onreset="resetForm()">
+ 	  <div>
+            <input size="3"/>
+			<button onclick="addCart()">Add to Cart</button>
+       </div>
+    </form>
+	
+	<!---------------- Total Cost ------------------->
+	<h3>Total:</h3>
+	<form id="form0" name="totCart" onsubmit="return validForm();" onreset="resetForm()">
+		<ul>
+			<li><label for="totalCost">Amount due:</label></li>
+			<li id="cartItem"><input type="text" name="name1" size="20" /></li>
+		</ul>
+		</form>
+	
+    <!-------------- Customer Name ------------------>
+	<h3>Personal Information:</h3>
+	<form id="form1" name="form1" onsubmit="return validForm();" onreset="resetForm()">
+		<ul>
+			<li><label for="name1">First name:</label></li>
+			<li id="pi1" oninput="validFName()"><input type="text" name="name1" size="20" /><span style="color:red">*Required</span></li>
+			<li><label for="name2">Last name:</label></li>
+			<li id="pi2" oninput="validLName(nameL)"><input type="text" name="name2" size="20" /><span style="color:red">*Required</span></li>
+			<li><label for="street">Street address:</label></li>
+			<li id="pi3" oninput="validStreet(streetAdd)"><input type="text" name="stAddress" size="50" /><span style="color:red">*Required</span></li>
+			<li><label for="city">City:</label></li>
+			<li id="pi4" oninput="validCity(cityOf)"><input type="text" name="city" size="20" /><span style="color:red">*Required</span></li>
+			<li><label for="state">State:</label></li>
+			<li id="pi5" oninput="validState(stateOf)"><input type="text" name="state" size="2" /><span style="color:red">*Required</span></li>
+			<li><label for="zip">Zip code:</label></li>
+			<li id="pi6" oninput="validZip(zipOf)"><input type="text" name="zip" size="10" /><span style="color:red">*Required</span></li>
+			<li><label for="country">Country:</label></li>
+			<li><select name="country">
+				<option selected="" value="Default">(Please select a country)</option>
+				<option value="AF">Australia</option>
+				<option value="AL">Canada</option>
+				<option value="DZ">India</option>
+				<option value="AS">Russia</option>
+				<option value="AD">USA</option>
+			</select></li>
+			<li><label for="email">Email:</label></li>
+			<li oninput="validEmail(emailAdd)"><input type="text" name="email" size="50" /><span style="color:red">Optional</span></li>
+			<li onclick="signUp(yesAdd,noAdd)"><label for="signup">Sign up for our newsletter:</label></li>
+			<li><input type="checkbox" name="yes" value="yes" checked /><span style="color:lightgrey">Yes</span></li>
+			<li><input type="checkbox" name="no" value="no" checked /><span style="color:lightgrey">No</span></li>
+			<li><label for="phone">Phone number:</label></li>
+			<li id="pi7" oninput="validPhone(phoneNum)"><input type="text" name="phone" size="10" /><span style="color:red">*Required</span></li>
+		</ul>
+		</form>
+    
+    <!------------- Credit Card Information ------------->
+	<h3>Payment Information</h3>
+	<p>Please select a payment method:</p>
+	<div class="dropdown">
+		<div id="myPay" class="btnType" onreset="resetForm()">
+		<select onclick="payButton()" class="dropBtn" >
+			<option value="blank">-select-</option>
+			<option value="visa">Visa</option>
+			<option value="mc">Mastercard</option>
+			<option value="discover">Discover</option>
+			<option value="amX">American Express</option>
+		</select>
+		</div>
+	</div>
+		
+    <p>Please enter a credit card number: 0000 0000 0000 0000</p>
+    <form action="" id="form2" oninput="validCCN()" onreset="resetForm()">
+      <div>
+      		<input size="19" />
+            <span style="color:red">Invalid credit card number</span>
+      </div>
+    </form>
+	
+	<div style="display: inline-block">
+	<p>Expiration Date: 00/00</p>
+		<form action="" id="form3" oninput="validExp()" onreset="resetForm()">
+			<div>
+				<input size="6" />
+				<span style="color:red">Invalid Expiration Date</span>
+			</div>
+		</form>
+	
+	<p>CVV Code: 000</p>
+		<form action="" id="form4" oninput="validCCV()" onreset="resetForm()">
+			<div>
+				<input size="5" />
+				<span style="color:red">Invalid CCV Code</span>
+			</div>
+		</form>
+    </div>
+	
+	<!--Submit or Reset--> 
+	<div class="done">
+		<form id="endForm" action="">
+			<!--<button onclick="submit">Submit</button>
+			<button onclick="reset">Reset</button>-->
+			<input type="submit" value="Submit">
+			<input type="reset" value="Reset">
+		</form>
+	</div>
+	    <footer>
+        <div class="#">
+			<p id="info">&copy; 2018 The Blade Shop || Michelle Landen  </p>
+		</div>
+         <div class="#">
+           <a class="socialmedia" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-square fa-4x" aria-hidden="true" alt="FB"></i></a>
+           <a class="socialmedia" href="https://twitter.com/?lang=en" target="_blank"><i class="fa fa-twitter-square fa-4x" aria-hidden="true" alt="twitter"></i></a>
+           <a class="socialmedia" href="https://www.youtube.com/?hl=en" target="_blank"><i class="fa fa-youtube-square fa-4x" aria-hidden="true" alt="youtube"></i></a>
+        </div>
+      </footer>
+	  </div>
+	  </div>
+  </body>
+</html>
